@@ -2,17 +2,19 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Имя проекта
-project(SysInfoHelper C)
+project(Pr6 C)
 
 # Настройка стандарта C и предупреждений
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
 
-# Автоматический поиск исходных файлов
-file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.c")
-file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS "src/*.h")
+# Обязательно подключаем потоки
+find_package(Threads REQUIRED)
 
-# Создание исполняемого файла
-add_executable(${PROJECT_NAME}
-    ${SOURCES}
-    ${HEADERS}
-)
+# Добавляем первую программу — поиск последнего вхождения
+add_executable(task1 src/task1.c)
+target_link_libraries(task1 Threads::Threads)
+
+# Добавляем вторую программу — все вхождения в порядке убывания
+add_executable(task2 src/task2.c)
+target_link_libraries(task2 Threads::Threads)
