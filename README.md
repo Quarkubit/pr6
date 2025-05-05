@@ -1,9 +1,9 @@
 ## Простая реализация работы мьютекса
 
 1. Клонируйте репозиторий:
-   ```bash
-   git clone https://github.com/Quarkubit/pr6
-   ```
+```bash
+git clone https://github.com/Quarkubit/pr6
+```
 2. Создайте директорию .build и перейдите в неё:
 
 ```bash
